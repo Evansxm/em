@@ -12,234 +12,316 @@
             font-family: 'Inter', sans-serif;
             background-color: #000000;
             color: #e5e5e5;
+            scroll-behavior: smooth;
         }
         .hero-gradient {
-            background: radial-gradient(circle at center, #0A3D3D 0%, #000000 70%);
+            background: radial-gradient(circle at center, #0A3D3D 0%, #000000 75%);
         }
         @keyframes sun-pulse {
             0%, 100% { filter: drop-shadow(0 0 15px rgba(255, 122, 0, 0.4)); transform: scale(1); }
-            50% { filter: drop-shadow(0 0 40px rgba(255, 122, 0, 0.8)); transform: scale(1.02); }
+            50% { filter: drop-shadow(0 0 45px rgba(255, 122, 0, 0.7)); transform: scale(1.03); }
         }
         .animate-sun {
-            animation: sun-pulse 4s ease-in-out infinite;
+            animation: sun-pulse 5s ease-in-out infinite;
         }
         .service-card {
-            background: rgba(10, 61, 61, 0.2);
-            border: 1px solid rgba(10, 61, 61, 0.5);
-            transition: all 0.3s ease;
+            background: rgba(10, 61, 61, 0.1);
+            border: 1px solid rgba(10, 61, 61, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .service-card:hover {
             border-color: #FF7A00;
-            transform: translateY(-5px);
-            background: rgba(10, 61, 61, 0.4);
+            transform: translateY(-8px);
+            background: rgba(10, 61, 61, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
         }
         .nav-blur {
-            backdrop-filter: blur(10px);
-            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, 0.85);
+        }
+        .pill {
+            border: 1px solid #0A3D3D;
+            background: rgba(10, 61, 61, 0.2);
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #FF7A00;
         }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden antialiased">
 
     <!-- Navbar -->
-    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-[#0A3D3D]">
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-[#0A3D3D]/50">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-3">
                 <img src="Em%20logo.png" alt="EM Logo" class="h-10 w-auto">
             </div>
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                <a href="#services" class="hover:text-[#FF7A00] transition-colors">Services</a>
-                <a href="#about" class="hover:text-[#FF7A00] transition-colors">About</a>
-                <a href="#locations" class="hover:text-[#FF7A00] transition-colors">Locations</a>
+            <div class="hidden md:flex items-center space-x-10 text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
+                <a href="#sectors" class="hover:text-[#FF7A00] transition-colors">Sectors</a>
+                <a href="#portfolio" class="hover:text-[#FF7A00] transition-colors">Portfolio</a>
+                <a href="#about" class="hover:text-[#FF7A00] transition-colors">Group</a>
                 <a href="#contact" class="hover:text-[#FF7A00] transition-colors">Contact</a>
             </div>
-            <a href="#contact" class="bg-[#FF7A00] text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-[#e66e00] transition-all transform hover:scale-105">
-                Get in Touch
+            <a href="mailto:evansmathibe82@gmail.com" class="bg-[#FF7A00] text-black px-7 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-[#e66e00] transition-all transform hover:scale-105 shadow-lg shadow-[#FF7A00]/20">
+                Inquire
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center pt-20 hero-gradient">
-        <div class="text-center px-6 max-w-4xl mx-auto">
-            <img src="Em%20logo.png" alt="EM Corporate" class="h-48 md:h-64 mx-auto mb-12 animate-sun">
-            <h1 class="text-4xl md:text-7xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">
+        <div class="text-center px-6 max-w-5xl mx-auto">
+            <div class="mb-10 inline-block px-4 py-1.5 border border-[#FF7A00]/30 rounded-full bg-[#FF7A00]/5 text-[#FF7A00] text-[10px] font-bold uppercase tracking-[0.3em] animate-pulse">
+                Global Headquarters • South Africa
+            </div>
+            <img src="Em%20logo.png" alt="EM Corporate" class="h-40 md:h-56 mx-auto mb-14 animate-sun">
+            <h1 class="text-5xl md:text-8xl font-bold tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500 leading-tight">
                 EM | Empowering Africa. <br><span class="text-[#FF7A00]">Building the Future.</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed">
-                A premier multinational leader across AI, Global Logistics, Data Centers, and Asset Management. We architect modern infrastructure and drive strategic acquisitions worldwide.
+            <p class="text-lg md:text-2xl text-gray-400 font-light max-w-3xl mx-auto leading-relaxed mb-12">
+                A premier multinational holding group orchestrating high-impact solutions across AI, Global Logistics, Infrastructure, and Strategic Investments.
             </p>
-            <div class="mt-10 flex flex-col md:flex-row items-center justify-center gap-4">
-                <a href="#services" class="w-full md:w-auto px-10 py-4 bg-[#FF7A00] text-black font-bold rounded-lg hover:bg-[#e66e00] transition-all">Explore Our Industries</a>
-                <a href="#about" class="w-full md:w-auto px-10 py-4 border border-[#0A3D3D] hover:border-[#FF7A00] rounded-lg transition-all">Corporate Profile</a>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-5">
+                <a href="#sectors" class="w-full md:w-auto px-12 py-5 bg-[#FF7A00] text-black font-extrabold rounded-xl hover:bg-[#e66e00] transition-all uppercase text-xs tracking-widest shadow-xl shadow-[#FF7A00]/20">Our Operations</a>
+                <a href="#about" class="w-full md:w-auto px-12 py-5 border border-[#0A3D3D] text-white font-bold rounded-xl hover:border-[#FF7A00] transition-all uppercase text-xs tracking-widest bg-white/5">Group Profile</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 px-6 bg-[#000000]">
+    <!-- Sectors Section -->
+    <section id="sectors" class="py-32 px-6 bg-[#000000]">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                <div>
-                    <h2 class="text-[#FF7A00] font-bold tracking-widest uppercase text-sm mb-4">Our Expertise</h2>
-                    <p class="text-3xl md:text-5xl font-bold">Multisector Global Solutions</p>
-                </div>
-                <p class="text-gray-400 max-w-md">Harnessing technology and logistical excellence to bridge gaps in emerging markets and developed economies.</p>
+            <div class="text-center mb-24">
+                <h2 class="text-[#FF7A00] font-bold tracking-[0.4em] uppercase text-xs mb-6">Industrial Pillars</h2>
+                <h3 class="text-4xl md:text-6xl font-bold tracking-tight">Multinational Scale</h3>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- AI -->
-                <div class="service-card p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-[#0A3D3D] flex items-center justify-center rounded-lg mb-6 text-[#FF7A00]">
-                        <i data-lucide="brain"></i>
+                <div class="service-card p-10 rounded-3xl">
+                    <div class="w-14 h-14 bg-[#0A3D3D] flex items-center justify-center rounded-2xl mb-8 text-[#FF7A00]">
+                        <i data-lucide="brain" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Artificial Intelligence</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Pioneering predictive analytics and machine learning frameworks for enterprise optimization and societal impact.</p>
+                    <div class="pill mb-4">4IR Frontier</div>
+                    <h3 class="text-2xl font-bold mb-4">Artificial Intelligence</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Developing enterprise AI ecosystems and predictive analytics frameworks to optimize global supply chains and governance.</p>
                 </div>
                 <!-- Logistics -->
-                <div class="service-card p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-[#0A3D3D] flex items-center justify-center rounded-lg mb-6 text-[#FF7A00]">
-                        <i data-lucide="truck"></i>
+                <div class="service-card p-10 rounded-3xl">
+                    <div class="w-14 h-14 bg-[#0A3D3D] flex items-center justify-center rounded-2xl mb-8 text-[#FF7A00]">
+                        <i data-lucide="truck" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Global Logistics</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">End-to-end supply chain mastery connecting Africa to the world via sea, air, and intelligent road networks.</p>
+                    <div class="pill mb-4">Supply Chain</div>
+                    <h3 class="text-2xl font-bold mb-4">Global Logistics</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">End-to-end multimodal transport networks connecting African markets to global corridors with real-time intelligence.</p>
                 </div>
                 <!-- Data Centres -->
-                <div class="service-card p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-[#0A3D3D] flex items-center justify-center rounded-lg mb-6 text-[#FF7A00]">
-                        <i data-lucide="server"></i>
+                <div class="service-card p-10 rounded-3xl">
+                    <div class="w-14 h-14 bg-[#0A3D3D] flex items-center justify-center rounded-2xl mb-8 text-[#FF7A00]">
+                        <i data-lucide="server" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Data Centres</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Investing in hyper-scale sovereign data infrastructure to power the continent's digital transformation.</p>
+                    <div class="pill mb-4">Infrastructure</div>
+                    <h3 class="text-2xl font-bold mb-4">Data Infrastructure</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Investing in hyper-scale sovereign data centers and hyper-scale cloud facilities to secure the continent's digital future.</p>
                 </div>
                 <!-- Asset Mgmt -->
-                <div class="service-card p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-[#0A3D3D] flex items-center justify-center rounded-lg mb-6 text-[#FF7A00]">
-                        <i data-lucide="line-chart"></i>
+                <div class="service-card p-10 rounded-3xl">
+                    <div class="w-14 h-14 bg-[#0A3D3D] flex items-center justify-center rounded-2xl mb-8 text-[#FF7A00]">
+                        <i data-lucide="line-chart" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Asset Management</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Sophisticated portfolio oversight and wealth creation strategies across diverse asset classes and regions.</p>
+                    <div class="pill mb-4">Capital</div>
+                    <h3 class="text-2xl font-bold mb-4">Asset Management</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Strategic capital allocation and high-yield portfolio management across emerging markets and diverse asset classes.</p>
                 </div>
                 <!-- Acquisitions -->
-                <div class="service-card p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-[#0A3D3D] flex items-center justify-center rounded-lg mb-6 text-[#FF7A00]">
-                        <i data-lucide="handshake"></i>
+                <div class="service-card p-10 rounded-3xl">
+                    <div class="w-14 h-14 bg-[#0A3D3D] flex items-center justify-center rounded-2xl mb-8 text-[#FF7A00]">
+                        <i data-lucide="handshake" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Global Acquisitions</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Strategic mergers and acquisitions to consolidate market share and enter high-growth frontier markets.</p>
+                    <div class="pill mb-4">Mergers</div>
+                    <h3 class="text-2xl font-bold mb-4">Global Acquisitions</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Executing complex M&A strategies to consolidate industry leadership and acquire frontier technological IP.</p>
                 </div>
                 <!-- Project Mgmt -->
-                <div class="service-card p-8 rounded-2xl">
-                    <div class="w-12 h-12 bg-[#0A3D3D] flex items-center justify-center rounded-lg mb-6 text-[#FF7A00]">
-                        <i data-lucide="layout-dashboard"></i>
+                <div class="service-card p-10 rounded-3xl">
+                    <div class="w-14 h-14 bg-[#0A3D3D] flex items-center justify-center rounded-2xl mb-8 text-[#FF7A00]">
+                        <i data-lucide="layout-dashboard" class="w-8 h-8"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Project Management</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Turnkey infrastructure execution, from urban development to large-scale industrial industrialization.</p>
+                    <div class="pill mb-4">Execution</div>
+                    <h3 class="text-2xl font-bold mb-4">Project Management</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Turnkey industrialization and urban infrastructure development, delivering world-class projects on schedule.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 px-6 bg-gradient-to-b from-black to-[#0A3D3D]">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="text-[#FF7A00] font-bold tracking-widest uppercase text-sm mb-4">Our Foundation</h2>
-                <h3 class="text-4xl md:text-5xl font-bold mb-8">South African Roots.<br>Global Footprint.</h3>
-                <p class="text-gray-300 mb-8 leading-relaxed">
-                    Headquartered in the economic heart of Johannesburg, EM has evolved from a regional specialist into a diversified multinational holding company. Our heritage is built on the resilience and innovation of the South African market, which now serves as our springboard for global expansion.
+    <!-- Portfolio Section (Sub-Brands) -->
+    <section id="portfolio" class="py-32 px-6 bg-gradient-to-b from-black to-[#0A3D3D]/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-[#FF7A00] font-bold tracking-[0.4em] uppercase text-xs mb-6">The Group Portfolio</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold mb-6">Strategic Subsidiaries</h3>
+                    <p class="text-gray-400 text-lg">Diverse industry leadership unified under the EM Group governance framework.</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="group relative overflow-hidden rounded-[32px] border border-[#0A3D3D] bg-black p-12 hover:border-[#FF7A00] transition-all">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#FF7A00]/5 rounded-bl-[100px]"></div>
+                    <h4 class="text-[#FF7A00] font-bold text-xs uppercase tracking-widest mb-4">NGO & Social Impact</h4>
+                    <h5 class="text-3xl font-bold mb-6">Tshwane Youth Centre</h5>
+                    <p class="text-gray-400 leading-relaxed mb-8">A triadic ecosystem focusing on AI/Tech, Agri-Tech, and the Arts to foster unity, growth, and opportunity in Pretoria.</p>
+                    <div class="flex items-center space-x-2 text-white font-bold text-xs uppercase tracking-tighter group-hover:text-[#FF7A00] transition-colors">
+                        <span>Corporate Responsibility</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-[32px] border border-[#0A3D3D] bg-black p-12 hover:border-[#FF7A00] transition-all">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#FF7A00]/5 rounded-bl-[100px]"></div>
+                    <h4 class="text-[#FF7A00] font-bold text-xs uppercase tracking-widest mb-4">Media & Creative</h4>
+                    <h5 class="text-3xl font-bold mb-6">Mone Modelling Agency</h5>
+                    <p class="text-gray-400 leading-relaxed mb-8">High-fashion creative direction and talent management, defining the aesthetic of South African creative innovation.</p>
+                    <div class="flex items-center space-x-2 text-white font-bold text-xs uppercase tracking-tighter group-hover:text-[#FF7A00] transition-colors">
+                        <span>Talent Management</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Group Section (About) -->
+    <section id="about" class="py-32 px-6 bg-[#000000]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div class="relative">
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-[#FF7A00]/10 rounded-full blur-3xl"></div>
+                <h2 class="text-[#FF7A00] font-bold tracking-[0.4em] uppercase text-xs mb-8">Leadership & Legacy</h2>
+                <h3 class="text-4xl md:text-6xl font-bold mb-10 leading-tight">South African Roots. <br>Global Ambition.</h3>
+                <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                    Founded in the economic powerhouse of Johannesburg, EM Group has transitioned from a specialized advisory firm into a diversified multinational. Under the leadership of <span class="text-white font-bold">Evans Mathibe</span>, our COO and Chief Strategist, we empower industries through relentless innovation and strategic capital deployment.
                 </p>
-                <div class="grid grid-cols-3 gap-8">
+                <div class="grid grid-cols-2 gap-8 py-8 border-y border-[#0A3D3D]/50 mb-10">
                     <div>
-                        <div class="text-3xl font-bold text-[#FF7A00]">50+</div>
-                        <div class="text-xs text-gray-400 uppercase tracking-widest mt-2">Projects</div>
+                        <div class="text-4xl font-bold text-[#FF7A00]">12+</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-widest mt-2">Active Regions</div>
                     </div>
                     <div>
-                        <div class="text-3xl font-bold text-[#FF7A00]">12</div>
-                        <div class="text-xs text-gray-400 uppercase tracking-widest mt-2">Countries</div>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-bold text-[#FF7A00]">450+</div>
-                        <div class="text-xs text-gray-400 uppercase tracking-widest mt-2">Experts</div>
+                        <div class="text-4xl font-bold text-[#FF7A00]">ZAR 2B+</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-widest mt-2">Project Value</div>
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="h-64 bg-[#0A3D3D]/30 rounded-3xl border border-[#0A3D3D] flex items-center justify-center">
-                     <i data-lucide="globe" class="w-16 h-16 text-[#FF7A00]/20"></i>
+            
+            <div class="bg-[#0A3D3D]/10 p-12 rounded-[40px] border border-[#0A3D3D]/50 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 text-[#0A3D3D]">
+                    <i data-lucide="globe" class="w-32 h-32 opacity-20"></i>
                 </div>
-                <div class="h-64 bg-[#0A3D3D]/30 rounded-3xl border border-[#0A3D3D] mt-12"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Locations -->
-    <section id="locations" class="py-24 px-6 bg-[#000000]">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-[#FF7A00] font-bold tracking-widest uppercase text-sm mb-4">Our Locations</h2>
-            <h3 class="text-3xl font-bold mb-16">South African Core & Regional Offices</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="p-6 border border-[#0A3D3D] rounded-xl hover:bg-[#0A3D3D] transition-all group">
-                    <div class="text-[#FF7A00] mb-2 font-bold group-hover:text-white transition-colors">Johannesburg</div>
-                    <div class="text-xs text-gray-500 group-hover:text-gray-200 uppercase">Global HQ</div>
-                </div>
-                <div class="p-6 border border-[#0A3D3D] rounded-xl hover:bg-[#0A3D3D] transition-all group">
-                    <div class="text-white mb-2 font-bold group-hover:text-white transition-colors">Cape Town</div>
-                    <div class="text-xs text-gray-500 group-hover:text-gray-200 uppercase">Regional Office</div>
-                </div>
-                <div class="p-6 border border-[#0A3D3D] rounded-xl hover:bg-[#0A3D3D] transition-all group">
-                    <div class="text-white mb-2 font-bold group-hover:text-white transition-colors">Durban</div>
-                    <div class="text-xs text-gray-500 group-hover:text-gray-200 uppercase">Port Ops</div>
-                </div>
-                <div class="p-6 border border-[#0A3D3D] rounded-xl hover:bg-[#0A3D3D] transition-all group">
-                    <div class="text-white mb-2 font-bold group-hover:text-white transition-colors">Pretoria</div>
-                    <div class="text-xs text-gray-500 group-hover:text-gray-200 uppercase">Gov Affairs</div>
+                <h4 class="text-2xl font-bold mb-8">Regional Operations</h4>
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center p-5 border border-[#0A3D3D] rounded-2xl bg-black/50 hover:border-[#FF7A00] transition-all group">
+                        <span class="font-bold text-gray-300 group-hover:text-white">Johannesburg (HQ)</span>
+                        <span class="text-[10px] text-[#FF7A00] uppercase font-bold bg-[#FF7A00]/10 px-3 py-1 rounded-full">Global Hub</span>
+                    </div>
+                    <div class="flex justify-between items-center p-5 border border-[#0A3D3D] rounded-2xl bg-black/50 hover:border-[#FF7A00] transition-all group">
+                        <span class="font-bold text-gray-300 group-hover:text-white">Cape Town</span>
+                        <span class="text-[10px] text-gray-500 uppercase font-bold border border-gray-700 px-3 py-1 rounded-full">Maritime & Tech</span>
+                    </div>
+                    <div class="flex justify-between items-center p-5 border border-[#0A3D3D] rounded-2xl bg-black/50 hover:border-[#FF7A00] transition-all group">
+                        <span class="font-bold text-gray-300 group-hover:text-white">Pretoria</span>
+                        <span class="text-[10px] text-gray-500 uppercase font-bold border border-gray-700 px-3 py-1 rounded-full">Public Policy</span>
+                    </div>
+                    <div class="flex justify-between items-center p-5 border border-[#0A3D3D] rounded-2xl bg-black/50 hover:border-[#FF7A00] transition-all group">
+                        <span class="font-bold text-gray-300 group-hover:text-white">Durban</span>
+                        <span class="text-[10px] text-gray-500 uppercase font-bold border border-gray-700 px-3 py-1 rounded-full">Global Logistics</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Form -->
-    <section id="contact" class="py-24 px-6">
-        <div class="max-w-3xl mx-auto bg-[#0A3D3D]/10 p-10 md:p-16 rounded-[40px] border border-[#0A3D3D]">
-            <div class="text-center mb-12">
-                <h3 class="text-4xl font-bold mb-4">Partner with EM</h3>
-                <p class="text-gray-400">Inquire about our services or join our investment network.</p>
+    <section id="contact" class="py-32 px-6 relative">
+        <div class="max-w-4xl mx-auto bg-[#0A3D3D]/10 p-12 md:p-20 rounded-[48px] border border-[#0A3D3D] relative z-10">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold mb-6">Partner with EM Group</h3>
+                <p class="text-gray-400 text-lg">Direct channel for institutional investors, global partners, and strategic talent.</p>
             </div>
-            <form id="contactForm" onsubmit="event.preventDefault(); alert('Success! Our corporate team will reach out to you within 24 hours.'); this.reset();" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form id="contactForm" onsubmit="event.preventDefault(); window.location.href='mailto:evansmathibe82@gmail.com?subject=EM%20Group%20Inquiry&body=Hello%20EM%20Team,%0D%0A%0D%0AMy%20name%20is%20' + document.getElementById('name').value + '...'; alert('Success! Redirecting to your email client to complete the inquiry.');" class="space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Name</label>
-                        <input type="text" required class="w-full bg-black border border-[#0A3D3D] rounded-lg px-4 py-3 focus:border-[#FF7A00] outline-none transition-all">
+                        <label class="block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-3">Full Name</label>
+                        <input type="text" id="name" required class="w-full bg-black border border-[#0A3D3D]/50 rounded-xl px-5 py-4 focus:border-[#FF7A00] outline-none transition-all text-white">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Email</label>
-                        <input type="email" required class="w-full bg-black border border-[#0A3D3D] rounded-lg px-4 py-3 focus:border-[#FF7A00] outline-none transition-all">
+                        <label class="block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-3">Organization</label>
+                        <input type="text" required class="w-full bg-black border border-[#0A3D3D]/50 rounded-xl px-5 py-4 focus:border-[#FF7A00] outline-none transition-all text-white">
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Message</label>
-                    <textarea rows="4" required class="w-full bg-black border border-[#0A3D3D] rounded-lg px-4 py-3 focus:border-[#FF7A00] outline-none transition-all"></textarea>
+                    <label class="block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-3">Professional Email</label>
+                    <input type="email" required class="w-full bg-black border border-[#0A3D3D]/50 rounded-xl px-5 py-4 focus:border-[#FF7A00] outline-none transition-all text-white">
                 </div>
-                <button type="submit" class="w-full bg-[#FF7A00] text-black font-bold py-4 rounded-lg hover:bg-[#e66e00] transition-all uppercase tracking-widest text-sm">
-                    Send Inquiry
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-3">Subject of Inquiry</label>
+                    <textarea rows="4" required class="w-full bg-black border border-[#0A3D3D]/50 rounded-xl px-5 py-4 focus:border-[#FF7A00] outline-none transition-all text-white resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-[#FF7A00] text-black font-extrabold py-5 rounded-xl hover:bg-[#e66e00] transition-all uppercase tracking-[0.3em] text-xs shadow-2xl shadow-[#FF7A00]/30">
+                    Establish Connection
                 </button>
             </form>
         </div>
+        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#FF7A00]/5 to-transparent pointer-events-none"></div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-[#0A3D3D] px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center space-x-2">
-                <img src="Em%20logo.png" alt="EM Logo" class="h-8 opacity-50 grayscale hover:grayscale-0 transition-all">
+    <footer class="py-20 border-t border-[#0A3D3D]/50 px-6 bg-black">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div class="max-w-sm">
+                <img src="Em%20logo.png" alt="EM Logo" class="h-10 mb-8 opacity-80">
+                <p class="text-xs text-gray-500 leading-loose uppercase tracking-widest">
+                    EM Group Holdings (Pty) Ltd is a diversified multinational enterprise architecting high-impact industrial solutions for the 4IR era.
+                </p>
             </div>
-            <div class="text-center md:text-right">
-                <div class="text-sm font-bold text-white mb-2 uppercase tracking-tighter">EM Holdings (Pty) Ltd</div>
-                <div class="text-xs text-gray-500 leading-relaxed">
-                    Sandton Tower, Johannesburg, South Africa<br>
-                    &copy; 2026 EM. All rights reserved.
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-[0.2em] mb-6">Sectors</h5>
+                    <ul class="text-[10px] text-gray-500 space-y-4 uppercase tracking-widest">
+                        <li>AI Frontier</li>
+                        <li>Global Logistics</li>
+                        <li>Infrastructure</li>
+                        <li>EM Capital</li>
+                    </ul>
                 </div>
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-[0.2em] mb-6">Group</h5>
+                    <ul class="text-[10px] text-gray-500 space-y-4 uppercase tracking-widest">
+                        <li>Leadership</li>
+                        <li>Portfolio</li>
+                        <li>Governance</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-[0.2em] mb-6">Corporate</h5>
+                    <ul class="text-[10px] text-gray-500 space-y-4 uppercase tracking-widest leading-relaxed">
+                        <li>Sandton Tower,<br>Johannesburg,<br>South Africa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 pt-10 border-t border-[#0A3D3D]/30 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-[10px] text-gray-600 uppercase tracking-widest font-bold">
+                &copy; 2026 EM Group. Multinational Operations.
+            </div>
+            <div class="flex space-x-6 text-gray-500">
+                <i data-lucide="linkedin" class="w-4 h-4 hover:text-[#FF7A00] cursor-pointer"></i>
+                <i data-lucide="twitter" class="w-4 h-4 hover:text-[#FF7A00] cursor-pointer"></i>
+                <i data-lucide="globe" class="w-4 h-4 hover:text-[#FF7A00] cursor-pointer"></i>
             </div>
         </div>
     </footer>
