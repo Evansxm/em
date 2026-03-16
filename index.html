@@ -49,6 +49,28 @@
             letter-spacing: 0.1em;
             color: #FF7A00;
         }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #128c7e;
+        }
     </style>
 </head>
 <body class="overflow-x-hidden antialiased">
@@ -61,7 +83,6 @@
             </div>
             <div class="hidden md:flex items-center space-x-10 text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
                 <a href="#sectors" class="hover:text-[#FF7A00] transition-colors">Sectors</a>
-                <a href="#portfolio" class="hover:text-[#FF7A00] transition-colors">Portfolio</a>
                 <a href="#about" class="hover:text-[#FF7A00] transition-colors">Group</a>
                 <a href="#contact" class="hover:text-[#FF7A00] transition-colors">Contact</a>
             </div>
@@ -153,43 +174,6 @@
                     <div class="pill mb-4">Execution</div>
                     <h3 class="text-2xl font-bold mb-4">Project Management</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">Turnkey industrialization and urban infrastructure development, delivering world-class projects on schedule.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section (Sub-Brands) -->
-    <section id="portfolio" class="py-32 px-6 bg-gradient-to-b from-black to-[#0A3D3D]/20">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                <div class="max-w-2xl">
-                    <h2 class="text-[#FF7A00] font-bold tracking-[0.4em] uppercase text-xs mb-6">The Group Portfolio</h2>
-                    <h3 class="text-4xl md:text-5xl font-bold mb-6">Strategic Subsidiaries</h3>
-                    <p class="text-gray-400 text-lg">Diverse industry leadership unified under the EM Group governance framework.</p>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="group relative overflow-hidden rounded-[32px] border border-[#0A3D3D] bg-black p-12 hover:border-[#FF7A00] transition-all">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#FF7A00]/5 rounded-bl-[100px]"></div>
-                    <h4 class="text-[#FF7A00] font-bold text-xs uppercase tracking-widest mb-4">NGO & Social Impact</h4>
-                    <h5 class="text-3xl font-bold mb-6">Tshwane Youth Centre</h5>
-                    <p class="text-gray-400 leading-relaxed mb-8">A triadic ecosystem focusing on AI/Tech, Agri-Tech, and the Arts to foster unity, growth, and opportunity in Pretoria.</p>
-                    <div class="flex items-center space-x-2 text-white font-bold text-xs uppercase tracking-tighter group-hover:text-[#FF7A00] transition-colors">
-                        <span>Corporate Responsibility</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </div>
-                </div>
-
-                <div class="group relative overflow-hidden rounded-[32px] border border-[#0A3D3D] bg-black p-12 hover:border-[#FF7A00] transition-all">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#FF7A00]/5 rounded-bl-[100px]"></div>
-                    <h4 class="text-[#FF7A00] font-bold text-xs uppercase tracking-widest mb-4">Media & Creative</h4>
-                    <h5 class="text-3xl font-bold mb-6">Mone Modelling Agency</h5>
-                    <p class="text-gray-400 leading-relaxed mb-8">High-fashion creative direction and talent management, defining the aesthetic of South African creative innovation.</p>
-                    <div class="flex items-center space-x-2 text-white font-bold text-xs uppercase tracking-tighter group-hover:text-[#FF7A00] transition-colors">
-                        <span>Talent Management</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </div>
                 </div>
             </div>
         </div>
@@ -325,6 +309,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/27724165061" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 32 32" class="w-8 h-8 fill-current">
+            <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.237-.381-1.99-.558-2.36-.218-.452-.46-.456-.726-.456h-.648c-.293 0-.712.191-.945.467-.303.356-.633.916-.633 1.533 0 .58.163 1.596.932 2.63 1.025 1.378 2.378 2.68 3.518 3.52 1.306.966 2.062 1.312 3.012 1.312h.204c.553 0 1.258-.293 1.533-.633.435-.533.56-1.166.56-1.533 0-.115-.05-.456-.12-.726-.115-.452-.293-.41-.533-.523l-1.01-.482zM16.675 27.334s4.467-1.493 7.154-4.138c2.152-2.113 4.766-6.387 4.766-10.423 0-3.174-1.254-6.16-3.526-8.432C22.802 2.074 19.816.82 16.642.82c-3.174 0-6.16 1.254-8.432 3.526C5.938 6.618 4.684 9.604 4.684 12.778c0 4.036 2.615 8.31 4.767 10.423 2.686 2.645 7.154 4.138 7.154 4.138l.07.032.07-.032zM16.675 30l-.132-.057s-4.515-1.546-7.39-4.384C6.442 22.957 3.5 18.045 3.5 12.778 3.5 9.284 4.884 6.014 7.398 3.5 9.912.986 13.182-.4 16.675-.4s6.763 1.386 9.277 3.9c2.514 2.514 3.9 5.784 3.9 9.278 0 5.266-2.942 10.179-5.653 12.781-2.875 2.838-7.39 4.384-7.39 4.384L16.675 30z"></path>
+        </svg>
+    </a>
 
     <script>
         lucide.createIcons();
