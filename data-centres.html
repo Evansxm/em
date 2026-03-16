@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Infrastructure | EM Group</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #000000; color: #e5e5e5; }
+        .hero-gradient { background: radial-gradient(circle at center, #0A3D3D 0%, #000000 75%); }
+        @keyframes sun-pulse { 0%, 100% { filter: drop-shadow(0 0 15px rgba(255, 122, 0, 0.4)); transform: scale(1); } 50% { filter: drop-shadow(0 0 45px rgba(255, 122, 0, 0.7)); transform: scale(1.03); } }
+        .animate-sun { animation: sun-pulse 5s ease-in-out infinite; }
+        .nav-blur { backdrop-filter: blur(12px); background: rgba(0, 0, 0, 0.85); }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50px; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; z-index: 1000; transition: all 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-[#0A3D3D]/50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html"><img src="Em%20logo.png" alt="EM Logo" class="h-10 w-auto animate-sun"></a>
+            <div class="hidden md:flex items-center space-x-8 text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
+                <a href="index.html" class="hover:text-[#FF7A00] transition-colors">Home</a>
+                <a href="index.html#services" class="text-[#FF7A00]">Services</a>
+                <a href="index.html#about" class="hover:text-[#FF7A00] transition-colors">About</a>
+                <a href="#contact" class="hover:text-[#FF7A00] transition-colors">Contact</a>
+            </div>
+            <a href="#contact" class="bg-[#FF7A00] text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-[#e66e00]">Inquire</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative pt-40 pb-20 px-6 hero-gradient text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-[#FF7A00] font-bold tracking-[0.4em] uppercase text-xs mb-6">EM Group • Infrastructure Division</div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-8">Data Infrastructure</h1>
+            <p class="text-xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed">Investing in sovereign data centers and hyper-scale cloud facilities to secure the continent's digital future.</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-20 px-6 bg-black">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="p-8 border border-[#0A3D3D] rounded-2xl bg-[#0A3D3D]/10">
+                <i data-lucide="server" class="w-10 h-10 text-[#FF7A00] mb-6"></i>
+                <h3 class="text-xl font-bold mb-4">Hyperscale Facilities</h3>
+                <p class="text-gray-400 text-sm">Tier IV certified data centers providing mission-critical environments for global cloud providers.</p>
+            </div>
+            <div class="p-8 border border-[#0A3D3D] rounded-2xl bg-[#0A3D3D]/10">
+                <i data-lucide="cloud" class="w-10 h-10 text-[#FF7A00] mb-6"></i>
+                <h3 class="text-xl font-bold mb-4">Sovereign Cloud</h3>
+                <p class="text-gray-400 text-sm">Localized data residency solutions ensuring compliance with African data protection regulations.</p>
+            </div>
+            <div class="p-8 border border-[#0A3D3D] rounded-2xl bg-[#0A3D3D]/10">
+                <i data-lucide="lock" class="w-10 h-10 text-[#FF7A00] mb-6"></i>
+                <h3 class="text-xl font-bold mb-4">Security & Connectivity</h3>
+                <p class="text-gray-400 text-sm">Carrier-neutral interconnects with advanced biometric and physical security perimeters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-20 bg-[#0A3D3D]/5 border-y border-[#0A3D3D]/30">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div><div class="text-4xl font-bold text-[#FF7A00]">6</div><div class="text-xs uppercase tracking-widest mt-2 text-gray-500">Major Facilities</div></div>
+            <div><div class="text-4xl font-bold text-[#FF7A00]">50MW</div><div class="text-xs uppercase tracking-widest mt-2 text-gray-500">Power Capacity</div></div>
+            <div><div class="text-4xl font-bold text-[#FF7A00]">100%</div><div class="text-xs uppercase tracking-widest mt-2 text-gray-500">Renewable Energy</div></div>
+            <div><div class="text-4xl font-bold text-[#FF7A00]">Tier IV</div><div class="text-xs uppercase tracking-widest mt-2 text-gray-500">Certification</div></div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-6 text-center">
+        <h3 class="text-3xl font-bold mb-8">Secure Your Infrastructure</h3>
+        <a href="mailto:evansmathibe82@gmail.com" class="inline-block bg-[#FF7A00] text-black font-bold py-4 px-10 rounded-xl hover:bg-[#e66e00] uppercase tracking-widest">Request Technical Specs</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-[#0A3D3D]/30 text-center bg-black">
+        <p class="text-[10px] text-gray-600 uppercase tracking-widest font-bold">&copy; 2026 EM Group.</p>
+    </footer>
+    <a href="https://wa.me/27724165061" class="whatsapp-float" target="_blank"><svg viewBox="0 0 32 32" class="w-8 h-8 fill-current"><path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.237-.381-1.99-.558-2.36-.218-.452-.46-.456-.726-.456h-.648c-.293 0-.712.191-.945.467-.303.356-.633.916-.633 1.533 0 .58.163 1.596.932 2.63 1.025 1.378 2.378 2.68 3.518 3.52 1.306.966 2.062 1.312 3.012 1.312h.204c.553 0 1.258-.293 1.533-.633.435-.533.56-1.166.56-1.533 0-.115-.05-.456-.12-.726-.115-.452-.293-.41-.533-.523l-1.01-.482zM16.675 27.334s4.467-1.493 7.154-4.138c2.152-2.113 4.766-6.387 4.766-10.423 0-3.174-1.254-6.16-3.526-8.432C22.802 2.074 19.816.82 16.642.82c-3.174 0-6.16 1.254-8.432 3.526C5.938 6.618 4.684 9.604 4.684 12.778c0 4.036 2.615 8.31 4.767 10.423 2.686 2.645 7.154 4.138 7.154 4.138l.07.032.07-.032zM16.675 30l-.132-.057s-4.515-1.546-7.39-4.384C6.442 22.957 3.5 18.045 3.5 12.778 3.5 9.284 4.884 6.014 7.398 3.5 9.912.986 13.182-.4 16.675-.4s6.763 1.386 9.277 3.9c2.514 2.514 3.9 5.784 3.9 9.278 0 5.266-2.942 10.179-5.653 12.781-2.875 2.838-7.39 4.384-7.39 4.384L16.675 30z"></path></svg></a>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
