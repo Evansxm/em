@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://emgroup.com/index.html</loc></url>
-  <url><loc>https://emgroup.com/ai.html</loc></url>
-  <url><loc>https://emgroup.com/logistics.html</loc></url>
-  <url><loc>https://emgroup.com/data-centres.html</loc></url>
-  <url><loc>https://emgroup.com/asset-management.html</loc></url>
-  <url><loc>https://emgroup.com/mergers.html</loc></url>
-  <url><loc>https://emgroup.com/project-management.html</loc></url>
+  <url><loc>https://evansxm.github.io/em/index.html</loc><priority>1.0</priority></url>
+  <url><loc>https://evansxm.github.io/em/ai.html</loc><priority>0.8</priority></url>
+  <url><loc>https://evansxm.github.io/em/logistics.html</loc><priority>0.8</priority></url>
+  <url><loc>https://evansxm.github.io/em/data-centres.html</loc><priority>0.8</priority></url>
+  <url><loc>https://evansxm.github.io/em/asset-management.html</loc><priority>0.8</priority></url>
+  <url><loc>https://evansxm.github.io/em/mergers.html</loc><priority>0.8</priority></url>
+  <url><loc>https://evansxm.github.io/em/project-management.html</loc><priority>0.8</priority></url>
 </urlset>
